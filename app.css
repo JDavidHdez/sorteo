@@ -1,0 +1,169 @@
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .config-panel {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        margin-bottom: 20px;
+    }
+
+    .config-panel h1 {
+        color: #667eea;
+        margin-bottom: 25px;
+        text-align: center;
+        font-size: 2em;
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+    }
+
+    .input-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        font-size: 16px;
+        transition: border-color 0.3s;
+    }
+
+    .input-group input:focus {
+        outline: none;
+        border-color: #667eea;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 15px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn:active {
+        transform: translateY(0);
+    }
+
+    .btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    .display-panel {
+        background: white;
+        padding: 60px 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        text-align: center;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .number-display {
+        font-size: 120px;
+        font-weight: bold;
+        color: #667eea;
+        animation: pulse 0.1s ease-in-out;
+        transition: font-size 0.3s ease;
+    }
+
+    .number-display.final {
+        animation: celebrate 0.6s ease-out;
+        color: #28a745;
+        font-size: 200px;
+    }
+
+    .status-text {
+        font-size: 24px;
+        color: #666;
+        margin-top: 20px;
+    }
+
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+
+    @keyframes celebrate {
+        0% { transform: scale(0.5) rotate(-10deg); opacity: 0; }
+        50% { transform: scale(1.1) rotate(5deg); }
+        100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    @media (max-width: 600px) {
+        .number-display {
+            font-size: 80px;
+        }
+        
+        .number-display.final {
+            font-size: 120px;
+        }
+        
+        .config-panel h1 {
+            font-size: 1.5em;
+        }
+    }
+
+    .confetti {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        background-color: #f0f;
+        position: absolute;
+        animation: confetti-fall 3s linear forwards;
+    }
+
+    @keyframes confetti-fall {
+        to {
+            transform: translateY(100vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+    
